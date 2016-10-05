@@ -502,6 +502,30 @@ Ext.define('Ext.ux.form.TinyMCETextArea', {
 		return me;
 	},
 
+	setValue: function (v) {
+		var me = this;
+
+		var res = me.callParent(arguments);
+
+		if (me.wysiwygIntialized) {
+			// The editor does some preformatting of the HTML text
+			// entered by the user.
+			// The method setValue sets the value of the textarea.
+			// We have to load the text into editor for the
+			// preformatting and then to save it back to the textarea.
+
+			var ed = tinymce.get(me.getInputId());
+
+			if (ed) {
+				setTimeout(function () {
+					ed.load();
+					ed.save();
+				}, 200);
+			}
+		}
+		return res;
+	},
+
 	focus: function (selectText, delay) {
 		var me = this;
 
