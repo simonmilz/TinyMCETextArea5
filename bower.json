@@ -1,0 +1,23 @@
+{
+	"name": "extjs-tinymce",
+	"homepage": "https://github.com/simonmilz/TinyMCETextArea5",
+	"authors": [
+		"Simon Milz <simon@simonmilz.de>"
+	],
+	"description": "ExtJS form field - a text area with integrated TinyMCE WYSIWYG Editor",
+	"main": "TinyMCETextArea.js",
+	"moduleType": [],
+	"keywords": [
+		"extjs",
+		"tinymce"
+	],
+	"license": "GPL2",
+	"ignore": [
+		"**/.*",
+		".idea",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}
