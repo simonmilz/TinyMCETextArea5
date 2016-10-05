@@ -156,7 +156,7 @@ Ext.define('Ext.ux.form.TinyMCETextArea', {
 
 		var edStatusbar = parent.down(".mce-statusbar");
 		if (edStatusbar)
-			newHeight -= edStatusbar.getHeight();
+			newHeight -= edStatusbar.getHeight() + 23;
 
 		me.lastFrameHeight = newHeight - 3;
 
