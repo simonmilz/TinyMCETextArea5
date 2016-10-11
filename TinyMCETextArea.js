@@ -517,10 +517,16 @@ Ext.define('Ext.ux.form.TinyMCETextArea', {
 			var ed = tinymce.get(me.getInputId());
 
 			if (ed) {
-				setTimeout(function () {
-					ed.load();
+				if (!me.initialTimeout) {
+					setTimeout(function () {
+						ed.load();
+						ed.save();
+					}, 200);
+
+					me.initialTimeout = true;
+				} else {
 					ed.save();
-				}, 200);
+				}
 			}
 		}
 		return res;
